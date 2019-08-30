@@ -1,0 +1,367 @@
+/*分页插件*/
+/*分页插件*/
+.wrapper{
+	margin:0 auto;
+	width:960px;
+	height:100%;
+}
+.M-box,.M-box1,.M-box2,.M-box3{
+	position: relative;
+	text-align: center;
+	margin-top:10px;
+	float: right;
+	margin-right: 40px;
+	zoom: 1;
+	align-items: center;
+}
+.M-box:before,.M-box:after,.M-box1:before,.M-box1:after ,.M-box2:before,.M-box2:after ,.M-box3:before,.M-box3:after{
+	content:"";
+	display:table;
+}
+.M-box:after,.M-box1:after,.M-box2:after,.M-box3:after{
+	clear:both;
+	overflow:hidden;
+}
+.M-box span,.M-box1 span,.M-box2 span,.M-box3 span{
+	float: left;
+	margin:0 5px;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	color: #bdbdbd;
+	font-size: 14px;
+}
+.M-box .active,.M-box1 .active,.M-box2 .active,.M-box3 .active{
+	float: left;
+	margin:0 5px;
+	width: 36px;
+	height: 36px;
+	line-height: 38px;
+	background: #fff8f4;
+	color: #FF5219;
+	font-size: 14px;
+	border: 1px solid #FF5219;
+	border-radius: 3px;
+}
+.M-box a,.M-box1 a,.M-box2 a,.M-box3 a{
+	float: left;
+	margin:0 5px;
+	width: 36px;
+	height: 36px;
+	line-height: 38px;
+	background: #fff;
+	border: 1px solid #ebebeb;
+	border-radius: 3px;
+	color: #2D3E4F;
+	font-size: 14px;
+}
+.M-box a:hover,.M-box1 a:hover,.M-box2 a:hover,.M-box3 a:hover{
+	background-color: #fff8f4;
+	border: 1px solid #ffba9f !important;
+}
+.M-box .next,.M-box .prev,.M-box1 .next,.M-box1 .prev{
+	font-family: "Simsun";
+	font-size: 14px;
+	/*! font-weight: bold; */
+}
+.now,.count{
+	padding:0 5px;
+	color:#f00;
+}
+
+
+
+/*input{
+    float: left;
+    margin:0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    outline: none;
+    color: #bdbdbd;
+    font-size: 14px;
+}*/
+
+.hed .hed-ul li:nth-child(2){
+	border-bottom: 4px solid #ff6633;
+	padding-left: 12px;
+}
+.dh-xl{
+	left: -25px;
+}
+
+/*é¡¹ç›®åŒºåŸŸ*/
+.all-xmu{
+	min-height: 1575px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+.xmu-l{
+	width:875px;
+	height: 100%;
+}
+.xm-zhekou{
+	width: 80px;
+	height: 31px;
+	line-height: 31px;
+	text-align: center;
+	font-size: 19px;
+	color: #FF7583;
+	background-color:#fff;
+	border: 1px solid #FF7583;
+	border-radius: 3px;
+	margin-top: 4px;
+}
+.l-leibie{
+	width: 100%;
+	padding-top: 20px;
+	background-color: #ffffff;
+	border: 1px solid #e2e5e6;
+}
+.l-leibie ul{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.l-leibie ul li{
+	float: left;
+	margin-left:11px;
+	border-radius:13px;
+	font-size: 16px;
+}
+.l-leibie ul li input{
+	width: 100px;
+	height: 28px;
+	padding-left: 10px;
+}
+.l-leibie ul li a{
+	padding: 5px 10px;
+	color: #2D3E4F;
+}
+.l-leibie ul li a:hover{
+	background-color: #f60;
+	border-radius:24px;
+	color: #fff !important;
+}
+.l-leibie ul li:first-child{
+	margin-left: 20px;
+	font-size: 14px;
+	color: #858586;
+}
+.l-leibie ul li:nth-child(2){
+	color:#858586;
+}
+.leibie-on{
+	background-color: #f60;
+	border-radius:24px;
+	color: #fff !important;
+}
+
+/*æœç´¢ç»“æžœ*/
+.l-jieguo{
+	width: 100%;
+	min-height: 1280px;
+	background-color:#fff;
+	border: 1px solid #e2e5e6;
+	padding-bottom: 60px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 23px;
+}
+.xm-jiazai{
+	height: 48px;
+	line-height: 48px;
+	position: absolute;
+	bottom:-13px;
+	left: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	display: none;
+}
+.xm-jiazai img{
+	float: left;
+	margin-top: 8px;
+}
+.xm-jiazai p{
+	float: left;
+	font-size: 16px;
+	margin-left: 20px;
+}
+.jieguo-top{
+	height: 48px;
+	line-height: 48px;
+	border-bottom:1px solid #e2e5e6;
+	padding-right: 40px;
+}
+.jieguo-top li{
+	float: left;
+	margin-left: 10px;
+	font-size: 16px;
+}
+.jieguo-top li a{
+	padding: 5px 10px;
+	color: #2D3E4F;
+}
+.paixu-on{
+	color: #FF5219 !important;
+}
+.jieguo-top li:first-child{
+	margin-left: 20px;
+	font-size: 15px;
+	color: #858586;
+}
+.jieguo-top li:nth-child(4){
+	margin-right: 38px;
+}
+.jieguo-xm{
+	width:811px;
+	margin-left: 20px;
+	height: 226px;
+	padding-top: 20px;
+	border-bottom: 1px solid #e2e5e6;
+}
+.jieguo-jieguo .jieguo-xm:last-child{
+	border-bottom:0;
+}
+.jieguo-xm img{
+	display: block;
+	width: 144px;
+	height: 193px;
+	margin-right: 14px;
+
+}
+.jieguo-xm .xm-l{
+	width: 510px;
+	height: 193px;
+}
+.jieguo-xm .xm-l span{
+	line-height: 35px;
+	font-size: 14px;
+	color: #7F8C8D;
+}
+.jieguo-xm .xm-l a{
+	height: 60px;
+	display: block;
+	margin-bottom: 25px;
+	font-size: 19px;
+	color: #2D3E4F;
+}
+.jieguo-xm .xm-l a:hover{
+	color:#FF6633;
+}
+.jieguo-xm .xm-r{
+	width: 117px;
+	height: 193px;
+}
+.jieguo-xm .xm-r .cc-price1{
+	display: block;
+	width: 117px;
+	height: 41px;
+	line-height: 41px;
+	text-align: center;
+	margin-right: -10px;
+	border-radius: 5px;
+	border:0;
+	font-size: 17px;
+	color: #fff;
+	background-color: #e0e7eb;
+}
+.jieguo-xm .xm-r a{
+	width: 117px;
+	height: 41px;
+	line-height: 41px;
+	text-align: center;
+	margin-right: -10px;
+	border-radius: 5px;
+	border:0;
+	font-size: 17px;
+	color: #fff;
+	background-color: #ff5219;
+}
+.r-dz{
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin-left:85px;
+	margin-right: 0;
+	margin-bottom: 53px;
+	background-position:-88px -267px;
+}
+.r-dz-on{
+	background-position:-88px -233px;
+}
+.r-jiage{
+	width: 100%;
+	height:35px;
+	line-height: 35px;
+	text-align: right;
+	margin-top: 55px;
+	margin-bottom: 30px;
+	display: block;
+}
+.r-jiage span{
+	color: red;
+	font-size: 24px;
+}
+.jieguo-fenye{
+	margin-left: 300px;
+	margin-top: 30px;
+}
+.jieguo-fenye li{
+	float: left;
+	width: 39px;
+	height: 39px;
+	line-height: 39px;
+	border-radius: 50%;
+	border: 1px solid #AFB6BB;
+	text-align: center;
+	margin-right: 18px;
+	font-size:19px;
+}
+.fenye-on{
+	border: 1px solid #232F3E !important;
+}
+.fenye-shenglue{
+	border: 0 !important;
+}
+
+.xmu-r{
+	width: 298px;
+	height: 100%;
+}
+.star{
+	background-color: #fff;
+}
+.star li{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px 20px;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
