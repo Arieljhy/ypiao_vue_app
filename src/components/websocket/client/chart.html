@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <script src="socket.io.js"></script>
+</head>
+<body>
+    <h4>多对多聊天室</h4>
+    <input type="text" id="inputMsg">
+    <button id="inputBtn" onclick="send()">发送</button>
+    <div id="msg" ></div>
+    <script>
+        var clientSocket = io("ws://127.0.0.1:4000");
+        clientSocket.on("enter",(data)=>{
+            var div=document.createElement("div");
+            div.innerHTML=data;
+            div.style.color="#f00";
+            var msg=document.getElementById("msg");
+            msg.appendChild(div);
+           
+        });
+        function send(){
+            
+            var inputmsg=document.getElementById("inputMsg").value;
+            console.log(inputmsg);
+            clientSocket.emit("send",inputmsg);
+
+        }
+        clientSocket.on("list",(data)=>{
+                console.log("接受到后端群发的："+data);
+                var div=document.createElement("div");
+                div.innerHTML=data;
+                div.style.color="#f0f";
+                var msg=document.getElementById("msg");
+                msg.appendChild(div);
+        });
+        clientSocket.on("leave",(data)=>{
+            var div=document.createElement("div");
+                div.innerHTML=data;
+                div.style.color="#f0f";
+                var msg=document.getElementById("msg");
+                msg.appendChild(div);
+        })
+
+    </script>
+</body>
+</html>

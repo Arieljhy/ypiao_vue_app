@@ -1,24 +1,24 @@
 <template>
 <div>
-    <div class="wd-top">
-        <div class="wd-dongxi" style="display:none;">
+    <div class="wd-top" >
+        <div class="wd-dongxi" v-if="iflogin">
             <div class="wd-tx">
-                <img src="../assets/girl.png" alt="头像">
+                <img :src=avatar alt="头像">
             </div>
             <p class="wd-center">
-                <span class="uname">Ariel</span>
-                <span class="phone">18266647973</span>
+                <span class="uname" v-text="uname"></span>
+                <span class="phone" v-text="phone"></span>
             </p>
             <router-link to="/wdsz" class="to">
             <i class="iconfont wd-sz">&#xe615;</i>
             </router-link>
         </div>
-        <div class="wd-dz-li">
+        <div class="wd-dz-li" v-else>
             <router-link to="/login" class="to">登录</router-link>
             <span class="fg">|</span>
             <router-link to="/register" class="to">注册</router-link>
-
         </div>
+
         <div class="wd-xq">
             <div class="xq-xm xm-xk"> 
                 <router-link to="" class="to">
@@ -123,9 +123,33 @@ export default {
     data(){
         return{
             title:"我的",
-            selected:"tab4"
+            selected:"tab4",
+            iflogin:false,
+            uname:"",
+            phone:"",
+            avatar:""
         }
-    }   
+    },
+    mounted(){
+        this.if_login()
+    },
+    methods:{
+        if_login(){
+            let userInfo = window.sessionStorage.userinfo;
+            let user = userInfo==undefined?userInfo:JSON.parse(userInfo);
+            
+            if(user!=undefined){
+                 this.uname=user.uname;
+                this.phone=user.phone;
+                 this.avatar=user.avatar;
+                this.iflogin=true; 
+            }else{
+                this.iflogin=false
+            }
+
+        } 
+
+    }
 }
 </script>
 <style lang="scss" scoped>

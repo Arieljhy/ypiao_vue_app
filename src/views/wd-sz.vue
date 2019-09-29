@@ -16,7 +16,7 @@
             <router-link to="" class="to">
                 <div class="list-item">
                     <span class="list-tit l">尊称</span>
-                    <span class=" r">冀女士</span>
+                    <span class=" r" v-text="user_name"></span>
                 </div>
             </router-link>
         
@@ -24,12 +24,12 @@
              <router-link to="" class="to">
                  <div class="list-item">
                     <span class="list-tit l">绑定手机号</span>
-                    <span class=" r">18266647973</span>
+                    <span class=" r" v-text="phone">18266647973</span>
                 </div>
             </router-link>
         
          
-             <router-link to="" class="to">
+             <router-link to="/upwdupdata" class="to">
                  <div class="list-item">
                     <span class="list-tit l"> 登录密码</span>
                     <span class=" r">修改<i class="iconfont">&#xe728;</i></span>
@@ -45,7 +45,7 @@
             </router-link>
         
          
-             <router-link to="" class="to">
+             <router-link to="/address" class="to">
                  <div class="list-item">
                     <span class="list-tit l">我的地址</span>
                     <span class="r">管理<i class="iconfont">&#xe728;</i></span>
@@ -58,16 +58,42 @@
                 </div>
             </router-link>  
     </div>
-    <button class="loginout"> 退出登录</button>
+    <mt-button class="loginout" @click="loginout()"> 退出登录</mt-button>
 </div>
     
 </template>
 <script>
-export default {
+    export default {
     data(){
         return{
-            tit:"账户管理"      
+            tit:"账户管理" ,
+            selected:"tab4",
+           
+            user_name:"",
+            phone:"",
+            avatar:""
         }
+    },
+    mounted(){
+        this.if_login()
+    },
+    methods:{
+        if_login(){
+            let userInfo = window.sessionStorage.userinfo;
+            let user = userInfo==undefined?userInfo:JSON.parse(userInfo);
+            console.log(user);
+            if(user!=undefined){
+                 this.user_name=user.user_name;
+                this.phone=user.phone;
+                 this.avatar=user.avatar;
+                
+            }
+
+        },
+        loginouit(){
+
+        } 
+
     }
 }
 </script>

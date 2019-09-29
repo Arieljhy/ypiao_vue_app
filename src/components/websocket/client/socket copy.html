@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socket</title>
+    <script src="socket.io.js"></script>
+</head>
+<body>
+ 
+    <script>
+        //服务 创建连接 connection
+        var clientSocket = io("ws://127.0.0.1:3000");
+        //发数据给服务器
+        clientSocket.emit("message","初次见面,请多关照");
+        clientSocket.on("server",(data)=>{
+            console.log("服务器来的:"+data);
+        })
+        clientSocket.on("list",(data)=>{
+        console.log(data);
+    });
+        
+    </script>
+</body>
+</html>

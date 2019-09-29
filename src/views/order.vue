@@ -9,15 +9,16 @@
             <!-- <mt-button icon="more" slot="right"></mt-button> -->
         </mt-header>
     </div>
-    <div class="order-status">
-        <mt-navbar v-model="selected">
-            <mt-tab-item id="1">进行中</mt-tab-item>
-            <mt-tab-item id="2">待付款</mt-tab-item>
-            <mt-tab-item id="3">等待发货</mt-tab-item>
-            <mt-tab-item id="4">等待取票</mt-tab-item>
-            <mt-tab-item id="5">已经发货</mt-tab-item>
-            <mt-tab-item id="6">已经完成</mt-tab-item>
-            <mt-tab-item id="7">已经取消</mt-tab-item>
+    <div class="order-status" >
+        
+        <mt-navbar v-model="selected" class="slide-box">
+            <mt-tab-item id="1" class="slide-item">进行中</mt-tab-item>
+            <mt-tab-item id="2" class="slide-item">待付款</mt-tab-item>
+            <mt-tab-item id="3" class="slide-item">等待发货</mt-tab-item>
+            <mt-tab-item id="4" class="slide-item">等待取票</mt-tab-item>
+            <mt-tab-item id="5" class="slide-item">已经发货</mt-tab-item>
+            <mt-tab-item id="6" class="slide-item">已经完成</mt-tab-item>
+            <mt-tab-item id="7" class="slide-item">已经取消</mt-tab-item>
         </mt-navbar>
 
         <!-- tab-container -->
@@ -62,7 +63,7 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .header{
     width: 100%;
 }
@@ -74,9 +75,23 @@ export default {
     border-radius: 3px;
     margin-bottom: 20px;
     font-size: 16px;
-
-
 }
+
+.order-tatus .mint-navbar.slide-box{
+      margin-top: 10px;
+      display:-webkit-box;
+      
+      overflow-x:scroll;
+      -webkit-overflow-scrolling:touch;
+  }
+  .order-tatus .mint-navbar.slide-box::-webkit-scrollbar {
+      display: none;
+  }
+
+
+        
+
+
 
     
 </style>

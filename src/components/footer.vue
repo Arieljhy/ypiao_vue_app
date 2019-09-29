@@ -18,12 +18,12 @@
                         <mt-tab-item id="tab2" class="tab">
                 <router-link to="/shopcart" class="to">
                     <div class="tab-con" v-if="select=selected=='tab2'?true:false">
-                        <i class="iconfont on">&#xe677;</i>          
-                        <span class="on">购物车</span>
+                        <i class="iconfont on">&#xe69d;</i>          
+                        <span class="on">票夹</span>
                     </div>
                     <div v-else>
-                        <i class="iconfont">&#xe677;</i>
-                        <span>购物车</span>
+                        <i class="iconfont">&#xe69d;</i>
+                        <span>票夹</span>
                     </div>        
                 </router-link>
             </mt-tab-item>
@@ -83,6 +83,9 @@ export default {
     border-radius: 3px;
     text-align: center;
     line-height: 30px;
+    z-index: 1000;
+    padding-bottom: 5px;
+    background-color: #fff;
     .tab{
         width:30px;
         height:80px;

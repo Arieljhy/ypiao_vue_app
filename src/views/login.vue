@@ -28,7 +28,7 @@ export default {
     },
     methods:{
         login(){ 
-            
+            let userinfo ={};
             let phone_reg= /^1[34578]\d{9}$/;
             var upwd_reg= /^([A-Z]|[a-z]|[0-9]){6,15}$/;
                 if(!phone_reg.test(this.phone)){
@@ -43,15 +43,24 @@ export default {
             let param = {phone:this.phone,upwd:this.upwd}
             let params=JSON.stringify(param);
            
-             
-            this.axios.post('/user/login',params,{headers:{
-        'Content-Type': 'application/json'
-    }}).then(function(response){
-                console.log(response.data);
-                 
-                })
-    }
-    
+             console.log(this.user_info);
+            this.axios.post('/user/login',params,{headers:{'Content-Type': 'application/json'}}).then((response)=>{
+                //console.log(typeof response.data);
+
+                 if(response.data==-1){
+                    this.$toast("登录失败");
+                }else{
+                    
+                    this.$toast("登录成功")
+                    sessionStorage.setItem("userinfo",JSON.stringify(response.data));
+                    setTimeout(()=>{
+                        this.$router.push('/personal');
+
+                    },1000);
+                } 
+
+            })                
+        }  
     }
 }
 </script>
